@@ -1,0 +1,32 @@
+{
+	"name": 		"tenbajt-slider-block/slider",
+	"icon": 		"format-gallery",
+	"title": 		"Slider",
+	"style": 		"file:./style-index.css",
+	"version": 		"1.0.0",
+	"category": 	"widgets",
+	"keywords": 	["zdjecia", "obrazy", "slaider", "slajder", "galeria"],
+	"apiVersion": 	2,
+	"textdomain":   "tenbajt-slider-block",
+	"description":  "Wyświetl obrazki w formie pokazu slajdów.",
+	"editorStyle":  "file:./index.css",
+	"editorScript": "file:./index.js",
+	"supports": {
+		"html": false,
+		"align": ["wide"],
+		"multiple": false,
+		"className": false,
+		"customClassName": false,
+		"defaultStylePicker": false
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "wide"
+		},
+		"postid": {
+			"type": "integer",
+			"default": null
+		}
+	}
+}
