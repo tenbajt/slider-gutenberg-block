@@ -4,10 +4,6 @@ import { breakpoint, color, radius } from "../resources";
 import { Button, Slide, Slides, ThemeProvider } from "../components";
 import { Fragment, useEffect, useRef, useState } from "@wordpress/element";
 
-const Anker = styled.div`
-    position: relative;
-`;
-
 export default function ScrollableImageList({ meta, error, isLoading }) {
     const slides = useRef([]);
 
@@ -65,6 +61,7 @@ export default function ScrollableImageList({ meta, error, isLoading }) {
                         <Slide key={image.id} image={image} index={index} slides={slides.current}/>
                     ))}
                 </Slides>
+                <Controls/>
                 {(canHover && canScroll) &&
                     <Fragment>
                         <Button direction="prev" clickHandler={handleScroll}/>

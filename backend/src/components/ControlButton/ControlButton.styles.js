@@ -1,8 +1,8 @@
-import styled, { css } from "styled-components";
+import { Icon } from "@wordpress/icons";
+import styled, { css } from 'styled-components';
 import { color, radius, shadow } from "../resources";
-import { Icon, chevronLeft, chevronRight } from "@wordpress/icons";
 
-const Container = styled.button`
+export const Button = styled.button`
     top: 50%;
     width: 2.5rem;
     color: inherit;
@@ -28,25 +28,16 @@ const Container = styled.button`
     &:hover{
         background-color: ${color.slate._50};
     }
-    ${props => props.direction === 'prev' && css`
+    ${({ direction }) => direction === 'prev' && css`
         left: 1rem;
         transform: translate(-50%, -50%);
     `}
-    ${props => props.direction === 'next' && css`
+    ${({ direction }) => direction === 'next' && css`
         right: 1rem;
         transform: translate(50%, -50%);
     `}
 `;
 
-export default function Button(props) {
-    const chevron = {
-        prev: chevronLeft,
-        next: chevronRight
-    }
-
-    return (
-        <Container direction={props.direction} onClick={props.clickHandler}>
-            <Icon icon={chevron[props.direction]} style={{ pointerEvents: 'none' }}/>
-        </Container>
-    )
-}
+export const Chevron = styled(Icon)`
+    pointer-events: none;
+`;
